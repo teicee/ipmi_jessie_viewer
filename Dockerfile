@@ -2,7 +2,7 @@ FROM openjdk:7u151-jdk-slim
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get -y install software-properties-common xvfb x11vnc wget supervisor fluxbox firefox-esr icedtea-7-plugin icedtea-netx net-tools
+RUN apt-get update && apt-get -y --force-yes install software-properties-common xvfb x11vnc wget supervisor fluxbox firefox-esr icedtea-7-plugin icedtea-netx net-tools
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD deployment.config /etc/.java/deployment/deployment.config
